@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.p00q.sga">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,10 +11,24 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <receiver android:name=".MyReceiver">
+            <intent-filter>
+                <!--注册开机广播地址-->
+                <action android:name="android.intent.action.BOOT_COMPLETED">
+                </action>
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <service android:name="cn.p00q.sga.MyService">
+            <intent-filter >
+                <action android:name="cn.p00q.sga.MyService" />
+                <category android:name="android.intent.category.default" />
+            </intent-filter>
+        </service>
+    </application>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 </manifest>

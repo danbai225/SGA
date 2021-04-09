@@ -2,6 +2,7 @@ package cn.p00q.sga;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
