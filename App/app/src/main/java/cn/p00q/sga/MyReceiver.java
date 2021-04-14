@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
+import cn.p00q.sga.utils.RootUtils;
+
 public class MyReceiver extends BroadcastReceiver
 {
 
@@ -18,10 +20,10 @@ public class MyReceiver extends BroadcastReceiver
         if (intent.getAction().equals("android.intent.action.BOOT_COMPLETED"))
         {
             Intent i = new Intent(context, MainActivity.class);
-//            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            context.startActivity(i);
-            Intent i1 = new Intent(context, MyService.class);
-            context.startService(i1);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(i);
+//            Intent i1 = new Intent(context, MyService.class);
+//            context.startService(i1);
         }
     }
 
